@@ -1,0 +1,8 @@
+{
+  "name": "Website Ulang Tahun Khanza",
+  "description": "Website ucapan selamat ulang tahun privat, interaktif, dan penuh kenangan untuk Khanza Aruna Zulvani.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

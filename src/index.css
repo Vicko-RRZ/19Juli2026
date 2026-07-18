@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* Custom 3D perspective and card fold utilities since standard Tailwind doesn't have 3D rotations */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Print CSS variables for beautiful physical outputs */
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+  #persistent-music-player,
+  #login-container,
+  #awal,
+  #cerita-kita,
+  #galeri,
+  #pesan,
+  #quiz,
+  #kejutan,
+  nav {
+    display: none !important;
+  }
+  #surat {
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
