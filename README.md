@@ -51,7 +51,7 @@ Sesuai dengan aturan peramban modern, pemutaran lagu tidak dapat dilakukan secar
 
 **Cara Memasang Lagu Asli:**
 1. Siapkan file musik "Semua Lagu Cinta" oleh Sal Priadi dalam format `.mp3`.
-2. Masukkan file tersebut ke dalam folder `/public/assets/` dengan nama `semua-lagu-cinta.mp3` (buat foldernya jika belum ada).
+2. Masukkan file tersebut ke dalam folder `/public/` dengan nama `semua-lagu-cinta.mp3` (buat foldernya jika belum ada).
 3. Jalankan build ulang. Website akan otomatis memutar file lokal tersebut. Jika file belum dimasukkan, sistem akan memutar lagu instrumental piano romantis yang indah sebagai cadangan agar pengalaman tidak terganggu.
 
 ---
@@ -94,7 +94,7 @@ Proyek full-stack Express + Vite ini siap di-deploy langsung ke Vercel:
 ## 📝 Daftar Periksa (Checklist) Sebelum Website Diberikan kepada Khanza
 
 *   [ ] Hubungkan domain kustom atau salin URL Vercel yang unik.
-*   [ ] Pastikan file audio `semua-lagu-cinta.mp3` telah dimasukkan ke folder `/public/assets/`.
+*   [ ] Pastikan file audio `semua-lagu-cinta.mp3` telah dimasukkan ke folder `/public/`.
 *   [ ] Pastikan password dan username Anda telah dikonfigurasi melalui Environment Variables.
 *   [ ] Cari kelima kacamata easter egg sendiri untuk menguji kelancaran misi.
 *   [ ] Tekan tombol "Cetak / Simpan PDF" di bagian Surat Utama untuk menguji visual kertas cetak.

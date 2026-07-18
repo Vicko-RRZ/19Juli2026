@@ -87,10 +87,17 @@ export default function HeroSection({ onStartStory, onGoToPhotos }: HeroSectionP
             <img
               src={heroImg}
               alt="Khanza Aruna Zulvani"
-              onError={() => {
-                const fallback = "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=500&q=80";
-                if (heroImg !== fallback) {
-                  setHeroImg(fallback);
+              onError={(e) => {
+                const currentSrc = e.currentTarget.src;
+                if (heroImg.startsWith('/photos/') && !currentSrc.includes('/assets/photos/')) {
+                  setHeroImg(heroImg.replace('/photos/', '/assets/photos/'));
+                } else if (heroImg.startsWith('/assets/photos/') && !currentSrc.includes('/photos/')) {
+                  setHeroImg(heroImg.replace('/assets/photos/', '/photos/'));
+                } else {
+                  const fallback = "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=500&q=80";
+                  if (heroImg !== fallback) {
+                    setHeroImg(fallback);
+                  }
                 }
               }}
               referrerPolicy="no-referrer"

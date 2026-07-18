@@ -140,6 +140,16 @@ export default function TimelineSection({ timelineData }: TimelineSectionProps) 
                             src={milestone.image}
                             alt={milestone.title}
                             onError={(e) => {
+                              const currentSrc = e.currentTarget.src;
+                              if (milestone.image) {
+                                if (milestone.image.startsWith('/photos/') && !currentSrc.includes('/assets/photos/')) {
+                                  e.currentTarget.src = milestone.image.replace('/photos/', '/assets/photos/');
+                                  return;
+                                } else if (milestone.image.startsWith('/assets/photos/') && !currentSrc.includes('/photos/')) {
+                                  e.currentTarget.src = milestone.image.replace('/assets/photos/', '/photos/');
+                                  return;
+                                }
+                              }
                               // Hide the image container if not uploaded yet
                               const container = e.currentTarget.parentElement;
                               if (container) container.style.display = 'none';

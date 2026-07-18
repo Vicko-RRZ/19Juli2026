@@ -100,7 +100,12 @@ export default function PhotoGallery() {
                     src={photo.src}
                     alt={photo.alt}
                     onError={(e) => {
-                      if (photo.fallbackSrc && e.currentTarget.src !== photo.fallbackSrc) {
+                      const currentSrc = e.currentTarget.src;
+                      if (photo.src.startsWith('/photos/') && !currentSrc.includes('/assets/photos/')) {
+                        e.currentTarget.src = photo.src.replace('/photos/', '/assets/photos/');
+                      } else if (photo.src.startsWith('/assets/photos/') && !currentSrc.includes('/photos/')) {
+                        e.currentTarget.src = photo.src.replace('/assets/photos/', '/photos/');
+                      } else if (photo.fallbackSrc && e.currentTarget.src !== photo.fallbackSrc) {
                         e.currentTarget.src = photo.fallbackSrc;
                       }
                     }}
@@ -211,7 +216,12 @@ export default function PhotoGallery() {
                 src={activePhoto.src}
                 alt={activePhoto.alt}
                 onError={(e) => {
-                  if (activePhoto.fallbackSrc && e.currentTarget.src !== activePhoto.fallbackSrc) {
+                  const currentSrc = e.currentTarget.src;
+                  if (activePhoto.src.startsWith('/photos/') && !currentSrc.includes('/assets/photos/')) {
+                    e.currentTarget.src = activePhoto.src.replace('/photos/', '/assets/photos/');
+                  } else if (activePhoto.src.startsWith('/assets/photos/') && !currentSrc.includes('/photos/')) {
+                    e.currentTarget.src = activePhoto.src.replace('/assets/photos/', '/photos/');
+                  } else if (activePhoto.fallbackSrc && e.currentTarget.src !== activePhoto.fallbackSrc) {
                     e.currentTarget.src = activePhoto.fallbackSrc;
                   }
                 }}

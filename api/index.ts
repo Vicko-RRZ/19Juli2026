@@ -185,8 +185,18 @@ app.post('/api/logout', (req, res) => {
   return res.json({ success: true });
 });
 
-// Serve static public folders if needed
+// Serve static photos folders with multiple fallbacks to handle local vs git/vercel mismatches
 app.use('/photos', express.static(path.join(process.cwd(), 'public', 'photos')));
+app.use('/photos', express.static(path.join(process.cwd(), 'assets', 'photos')));
+app.use('/photos', express.static(path.join(process.cwd(), 'photos')));
+
+app.use('/assets/photos', express.static(path.join(process.cwd(), 'public', 'photos')));
+app.use('/assets/photos', express.static(path.join(process.cwd(), 'assets', 'photos')));
+app.use('/assets/photos', express.static(path.join(process.cwd(), 'photos')));
+
+// Serve audio file with fallbacks
 app.use('/semua-lagu-cinta.mp3', express.static(path.join(process.cwd(), 'public', 'semua-lagu-cinta.mp3')));
+app.use('/semua-lagu-cinta.mp3', express.static(path.join(process.cwd(), 'assets', 'semua-lagu-cinta.mp3')));
+app.use('/semua-lagu-cinta.mp3', express.static(path.join(process.cwd(), 'semua-lagu-cinta.mp3')));
 
 export default app;
