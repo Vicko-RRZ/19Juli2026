@@ -33,7 +33,17 @@ export default function LoginScreen({ onLoginSuccess }: LoginScreenProps) {
         body: JSON.stringify({ username, password })
       });
 
-      const data = await response.json();
+      let data;
+      const contentType = response.headers.get('content-type');
+      if (contentType && contentType.includes('application/json')) {
+        data = await response.json();
+      } else {
+        const text = await response.text();
+        console.error("Non-JSON Response received:", text);
+        setErrorMessage(`Terjadi masalah koneksi atau server error (HTTP ${response.status}).`);
+        setLoginState('error');
+        return;
+      }
 
       if (response.ok && data.success) {
         setLoginState('success');
@@ -44,8 +54,9 @@ export default function LoginScreen({ onLoginSuccess }: LoginScreenProps) {
         setErrorMessage(data.message || 'Sepertinya kunci rahasianya belum cocok. Coba diingat lagi, Dedek.');
         setLoginState('error');
       }
-    } catch (err) {
-      setErrorMessage('Terjadi masalah koneksi. Coba lagi ya, Sayang.');
+    } catch (err: any) {
+      console.error("Login fetch error:", err);
+      setErrorMessage(`Gagal menghubungi server. Periksa koneksi atau pastikan server aktif (${err.message || 'Error'}).`);
       setLoginState('error');
     } finally {
       setIsLoading(false);
