@@ -185,8 +185,8 @@ app.post('/api/logout', (req, res) => {
   return res.json({ success: true });
 });
 
-// Serve assets folder if needed
-const assetsPath = path.join(process.cwd(), 'public', 'assets');
-app.use('/assets', express.static(assetsPath));
+// Serve static public folders if needed
+app.use('/photos', express.static(path.join(process.cwd(), 'public', 'photos')));
+app.use('/semua-lagu-cinta.mp3', express.static(path.join(process.cwd(), 'public', 'semua-lagu-cinta.mp3')));
 
 export default app;

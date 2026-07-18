@@ -18,7 +18,7 @@ export default function MusicPlayer({ playImmediately = false }: MusicPlayerProp
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   // Sweet background instrumental as out-of-the-box working placeholder
-  const audioSource = "/assets/semua-lagu-cinta.mp3"; 
+  const audioSource = "/semua-lagu-cinta.mp3"; 
   // Fallback royalty-free beautiful piano acoustic track if local asset is not uploaded yet
   const fallbackSource = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3";
 

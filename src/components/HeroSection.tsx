@@ -10,7 +10,7 @@ interface HeroSectionProps {
 export default function HeroSection({ onStartStory, onGoToPhotos }: HeroSectionProps) {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [birthdayState, setBirthdayState] = useState<'before' | 'today' | 'after'>('before');
-  const [heroImg, setHeroImg] = useState('/assets/photos/hero_khanza.jpg');
+  const [heroImg, setHeroImg] = useState('/photos/hero_khanza.jpg');
 
   const birthdayDate = new Date('2026-07-19T00:00:00+07:00'); // July 19, 2026 Jakarta Time
 

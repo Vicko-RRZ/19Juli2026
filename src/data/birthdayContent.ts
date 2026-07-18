@@ -58,7 +58,7 @@ export const birthdayContent: BirthdayContent = {
       title: "Bersepeda, Pasar Minggu, dan Sebuah Modus",
       description: "Kencan pertama kita dimulai dengan bersepeda menuju Pasar Minggu, lalu berhenti di Indomaret. Modus resminya adalah berdiskusi tentang baju fashion show yang akan kita hadiri sebagai pasangan. Padahal, mungkin tujuan utamanya adalah supaya kita bisa menghabiskan waktu bersama lebih lama.",
       iconType: "indomaret",
-      image: "/assets/photos/first_date.jpg"
+      image: "/photos/first_date.jpg"
     },
     {
       id: 8,
@@ -66,7 +66,7 @@ export const birthdayContent: BirthdayContent = {
       title: "Akhirnya Resmi",
       description: "Setelah perjalanan yang tidak selalu lurus, pada 25 Oktober 2023 kita resmi berpacaran. Dari saling menyukai, HTS, sempat berjeda, kembali bertemu, lalu akhirnya memilih berjalan bersama.",
       iconType: "official",
-      image: "/assets/photos/IMG-20230927-WA0023.jpg"
+      image: "/photos/IMG-20230927-WA0023.jpg"
     },
     {
       id: 9,
