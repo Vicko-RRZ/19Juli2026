@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Glasses, Heart, AlertTriangle } from 'lucide-react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 // Components
 import CustomCursor from './components/CustomCursor';
@@ -256,6 +257,9 @@ export default function App() {
         onScrollToLetter={() => scrollTo('surat')}
         onLogout={handleLogout}
       />
+
+      {/* Vercel Speed Insights */}
+      <SpeedInsights />
 
     </div>
   );
