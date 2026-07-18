@@ -40,7 +40,7 @@ export default function MiniQuiz() {
   // Personalized score feedback
   const getScoreFeedback = (score: number) => {
     if (score === 100) {
-      return "Skor sempurna. Kamu pasti Khanza. Atau aku sedang menguji website buatanku sendiri.";
+      return "Skor sempurna. Kamu pasti Khanza.";
     } else if (score >= 80) {
       return "Luar biasa, Sayang! Memori kamu sangat kuat untuk setiap ingatan kecil kita.";
     } else if (score >= 50) {

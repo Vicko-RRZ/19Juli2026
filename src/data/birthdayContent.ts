@@ -65,8 +65,7 @@ export const birthdayContent: BirthdayContent = {
       year: "25 Oktober 2023",
       title: "Akhirnya Resmi",
       description: "Setelah perjalanan yang tidak selalu lurus, pada 25 Oktober 2023 kita resmi berpacaran. Dari saling menyukai, HTS, sempat berjeda, kembali bertemu, lalu akhirnya memilih berjalan bersama.",
-      iconType: "official",
-      image: "/photos/IMG-20230927-WA0023.jpg"
+      iconType: "official"
     },
     {
       id: 9,
